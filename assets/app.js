@@ -10,6 +10,7 @@
 import './styles/app.scss';
 //import './bootstrap/dist/js/dist/popover.js';
 //import './bootstrap/dist/js/dist/toast.js';
+import './js/theme.js';
 
 //import './bootstrap/dist/js/dist/tooltip.js';
 import 'bootstrap';
