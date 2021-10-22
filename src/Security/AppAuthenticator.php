@@ -30,8 +30,10 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
     }
 
     public function authenticate(Request $request): PassportInterface
+
     {
-        $email = $request->request->get('email', '');
+        $email = $request->request->get
+        ('email', '');
 
         $request->getSession()->set(Security::LAST_USERNAME, $email);
 
@@ -39,23 +41,23 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             new UserBadge($email),
             new PasswordCredentials($request->request->get('password', '')),
             [
-                new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
+                new CsrfTokenBadge(
+                    'authenticate',
+                    $request->request->get('_csrf_token')),
             ]
         );
     }
 
-    public function onAuthenticationSuccess(
-        Request $request,
-        TokenInterface $token,
-        string $firewallName): ?Response
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
+
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
         // For example:
-        //return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        //rtrn new RedirectResponse($this->urlGenerator->generate('some_route'));
+        throw new \Exception('TODO: provide  '.__FILE__);
     }
 
     protected function getLoginUrl(Request $request): string
