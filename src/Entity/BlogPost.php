@@ -35,7 +35,7 @@ class BlogPost
     private $slug;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
@@ -149,4 +149,6 @@ class BlogPost
 
         return $this;
     }
+
+
 }
