@@ -19,6 +19,19 @@ class PeintureRepository extends ServiceEntityRepository
         parent::__construct($registry, Peinture::class);
     }
 
+      // cette fonction permet de recuperer les dernières peintures dans la bd
+
+         public function LastTree(){
+         return $this->createQueryBuilder('p')
+             ->orderBy('p.id','DESC')
+             ->setMaxResults(3)
+             ->getQuery()
+             ->getResult();
+
+         }
+
+
+
     // /**
     //  * @return Peinture[] Returns an array of Peinture objects
     //  */

@@ -15,6 +15,7 @@
                 </p>
 
                <div class="col-12">
+                   {% for peinture in peintures %}
                 <!-- Card -->
                 <div class="card card-row shadow-light-lg mb-6 lift lift-lg" data-aos="fade-right">
                     <div class="row gx-0">
@@ -22,7 +23,7 @@
                         <a class="col-12 col-md-6  bg-cover card-img-start" style="background-image: url(img/place.jpg);" href="#!">
 
                             <!-- Image (placeholder) -->
-                            {# <img src="img/place.jpg" alt="..." class="img-fluid d-md-none invisible"> #}
+                             <img src="{{ peinture.file }}" alt="..." class="img-fluid d-md-none invisible">
 
 
                             <!-- Shape -->
@@ -39,12 +40,12 @@
 
                                 <!-- Heading -->
                                 <h3>
-                                    Titre de la peinture
+                                    {{ peinture.nom }}
                                 </h3>
 
                                 <!-- Text -->
                                 <p class="mb-0 text-muted">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit .
+                                     {{ peinture.description|u.truncate(200 ,'...',false) }}
                                 </p>
 
                             </a>
@@ -60,15 +61,15 @@
                                     <img src="assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
                                 </div> #}
 
-
-                                <!-- Author -->
+                                  {# <!-- Author -->
                                 <h6 class="text-uppercase text-muted me-2 mb-0">
-                                    Ab Hadley
-                                </h6>
+                                    {{ peinture.author }}
+                                </h6> #}
+
 
                                 <!-- Date -->
                                 <p class="h6 text-uppercase text-muted mb-0 ms-auto">
-                                    <time datetime="2019-05-02">Ajoutée le 08/02/2021</time>
+                                    <time datetime="2019-05-02">Ajoutée le {{ peinture.createdAt|date('d/m/y') }}</time>
                                 </p>
 
                             </a>
@@ -78,6 +79,7 @@
                     </div> <!-- / .row -->
                 </div>
                </div>
+               {% endfor %}
 
             </div>
         </div> <!-- / .row -->
