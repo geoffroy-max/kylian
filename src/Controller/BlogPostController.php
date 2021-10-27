@@ -14,7 +14,7 @@ class BlogPostController extends AbstractController
 {
     /**
      * cette fonction permet d'afficher ttes les actualités
-     * @Route("/actualité", name="blog_post")
+     * @Route("/actualité", name="actualités")
      */
     public function actualite(BlogPostRepository $brpo, PaginatorInterface $paginator ,Request $request): Response
     {

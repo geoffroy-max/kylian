@@ -15,7 +15,7 @@ class PeintureController extends AbstractController
 {
     /**
      * cette fonction permet d'afficher toutes les peintures réaliseer
-     * @Route("/realisation", name="realisation")
+     * @Route("/realisation", name="realisations")
      */
     public function realisation(PeintureRepository $peintureRepo, PaginatorInterface $paginator, Request $request ): Response
     {

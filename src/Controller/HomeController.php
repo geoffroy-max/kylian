@@ -12,11 +12,11 @@ class HomeController extends AbstractController
 {
     /**
      * cette fonction permet d'afficher la page d'accueil
-     * @Route("/", name="home",methods={"GET"})
+     * @Route("/", name="home")
      */
     public function index(PeintureRepository $peintureRepository,BlogPostRepository $bRpo): Response
     {
-        return $this->render('home/actualité.html.twig', [
+        return $this->render('home/index.html.twig', [
             'peintures'=>$peintureRepository->LastTree(),
             'blogposts'=>$bRpo->LasTree()
         ]);
