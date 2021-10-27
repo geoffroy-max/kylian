@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogPostController!{% endblock %}
+
+{% block body %}
+
+    <!-- ARTICLES -->
+    <section class="pt-7 pt-md-10">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-12 ">
+
+                    <!-- Heading -->
+                    <h3 class="mb-4">
+                        Dernières actualités
+                    </h3>
+
+                    <!-- Text -->
+                    <p class="mb-4 text-muted">
+                        jojo Here’s what we've been up to recently.
+                    </p>
+                </div>
+
+            </div> <!-- / .row -->
+            <div class="row">
+                {% for blogpost in blogposts %}
+                <div class="col-12  col-lg-4 d-flex">
+                 {% include'blog_post/_actualité.html.twig' %}
+                </div>
+                {% endfor %}
+        </div> <!-- / .container -->
+        </div>
+    </section>
+<div class="pagination">
+    <div class="d-flex justify-content-center mb-3">
+
+        {{ knp_pagination_render( blogposts ) }}
+    </div>
+</div>
+
+{% endblock %}

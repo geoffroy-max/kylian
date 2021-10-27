@@ -29,7 +29,14 @@ class PeintureRepository extends ServiceEntityRepository
              ->getResult();
 
          }
+         // cette fonction permet de recuperer toutes peinture dans la bd
+     public function findAllPeinture(){
+        return $this->createQueryBuilder('p')
+              ->orderBy('p.id', 'ASC')
+            ->setMaxResults(8)
+                ->getQuery();
 
+    }
 
 
     // /**

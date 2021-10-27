@@ -20,11 +20,19 @@ class BlogPostRepository extends ServiceEntityRepository
     }
 
     public function LasTree(){
-        return $this->createQueryBuilder('b')
-            ->orderBy('b.id','DESC')
+        return $this->FindAllVisible('b')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult();
+    }
+    public function FindAllVisible(){
+        return $this->createQueryBuilder('b')
+            ->orderBy('b.id','DESC');
+    }
+    public function FindAllAct(){
+        return $this->FindAllVisible('b')
+               ->setMaxResults(10)
+               ->getQuery();
     }
     // /**
     //  * @return BlogPost[] Returns an array of BlogPost objects

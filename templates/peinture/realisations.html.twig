@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PeintureController!{% endblock %}
+
+{% block body %}
+
+    <!-- ARTICLES -->
+    <section class="pt-7 pt-md-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Heading -->
+                    <h3 class="mb-0">
+                        Dernieres réalisations
+                    </h3>
+                    <!-- Text -->
+                    <p class="mb-0 text-muted">
+                        Here’s what we've been up to recently.
+                    </p>
+                </div>
+
+     <div class="row">
+         {% for peinture in peintures %}
+         <div class="col-12 col-md-6 d-flex">
+       {% include 'peinture/_realisation.html.twig' %}
+             </div>
+         {% endfor %}
+     </div>
+
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+        <div class="pagination">
+            <div class="d-flex justify-content-center mb-3">
+
+                {{ knp_pagination_render( peintures ) }}
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
