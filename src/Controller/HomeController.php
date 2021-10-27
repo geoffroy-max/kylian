@@ -12,7 +12,7 @@ class HomeController extends AbstractController
 {
     /**
      * cette fonction permet d'afficher la page d'accueil
-     * @Route("/", name="home",methods={"GET"})
+     * @Route("/", name="home")
      */
     public function index(PeintureRepository $peintureRepository,BlogPostRepository $bRpo): Response
     {

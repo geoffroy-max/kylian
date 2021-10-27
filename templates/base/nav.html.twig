@@ -4,7 +4,7 @@
     <div class="container-fluid">
 
         <!-- Brand -->
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="{{ path('home') }}">
             <img src="/img/logo.png" class="navbar-brand-img" alt="..." >
         </a>
 
@@ -24,15 +24,16 @@
             <!-- Navigation -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarLandings" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarLandings" data-bs-toggle="dropdown" href="{{ path('realisations') }}" aria-haspopup="true" aria-expanded="false">
                         Réalisation
                     </a>
-                    <div class="dropdown-menu dropdown-menu-xl p-0" aria-labelledby="navbarLandings">
+                    {# <div class="dropdown-menu dropdown-menu-xl p-0" aria-labelledby="navbarLandings">
                         <div class="row gx-0">
                             <div class="col-12 col-lg-6">
                                 <div class="dropdown-img-start" >
 
                                     <!-- Heading -->
+
                                     <h4 class="fw-bold text-white mb-0">
                                         Want to see an overview?
                                     </h4>
@@ -120,9 +121,10 @@
                             </div>
                         </div> <!-- / .row -->
                     </div>
-                </li>
+                </li> #}
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarPages" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarPages" data-bs-toggle="dropdown" href="{{ path('actualités') }}" aria-haspopup="true" aria-expanded="false">
                         Actualité
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarPages">
