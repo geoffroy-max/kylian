@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AProposController!{% endblock %}
+
+{% block body %}
+<section data-jarallax data-speed=".8" class="py-10 py-md-14 overlay overlay-black overlay-60 bg-cover jarallax" style="background-image: url(img/peintre.jpg);">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-7">
+                <div class="blockquote mb-0">
+                    <P class="h2 text-white">
+                        {{ peintre.apropos }}
+                    </P>
+                    <footer class="blockquote text-white-50 mb-0">
+                        {{ peintre.nom }} {{ peintre.prenom }}
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
