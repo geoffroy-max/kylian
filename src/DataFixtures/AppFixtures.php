@@ -35,7 +35,8 @@ class AppFixtures extends Fixture
                ->setPrenom($faker->firstName)
               ->setNom($faker->lastName)
             ->setTelephone($faker->phoneNumber)
-              ->setApropos($faker->text);
+              ->setApropos($faker->text)
+              ->setRoles(['ROLE_PEINTRE']);
 
 $password= $this->hasher->hashPassword($user, 'kylian');
        $user->setPassword($password);
