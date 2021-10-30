@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PortfolioController!{% endblock %}
+
+{% block body %}
+
+    <!-- WELCOME -->
+{% set img = categorie.peintures|last %}
+<section data-jarallax data-speed=".8" class="py-10 py-md-14 overlay overlay-black overlay-60 bg-cover jarallax" style="background-image: url({{ img.file }});">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7 text-center">
+                <h1 class="display-2 fw-bold text-white">
+                    {{ categorie.nom }}
+                </h1>
+                <p class="lead text-white-75 mb-4">
+                    {{ categorie.description }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x svg-shim text-light">
+        <svg viewBox="0 0 1738 487" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1420.92s713.43 457.505 0 485.868C707.502 514.231 0 0 0 0z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="0" y1="0" x2="1049.98" y2="912.68" gradientUnits="userSpaceOnUse"><stop stop-color="currentColor" stop-opacity=".075"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs></svg>      </div>
+</div>
+<!-- Content-->
+    <section class="py-8 py-md-11-n10 mt-md-n14">
+        <div class="container">
+            <div class="row " id="portfolio" data-isotope='{"layoutMode":"fitRows"}'>
+
+                {% for peinture in peintures %}
+                    {# on va utilisé la derniere img pr presenter ls peintures en utilisnt le filstre last #}
+                    <div class="col-12 col-md-4 ">
+                        <a href="" class="card lift lift-lg shadow-light-lg mb-7" data-bigpicture='{"imgSrc":"{{ peinture.file }}"}'>
+                            <div class="card-zoom">
+                                <img src="{{ peinture.file }}" alt="" class="card-img">
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

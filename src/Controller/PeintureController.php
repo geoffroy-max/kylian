@@ -25,4 +25,5 @@ $peintures= $paginator->paginate($Dpeintures, $request->query->getInt('page',1),
             'peintures'=>$peintures
         ]);
     }
+
 }
