@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PortfolioController!{% endblock %}
+
+{% block body %}
+
+    <!-- WELCOME -->
+    <section class="pt-8 pt-md-11 pb-10 pb-md-15 bg-primary" style="margin-top: -87px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7 text-center">
+                    <h1 class="display-2 fw-bold text-white">
+                        Portfolio
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Shape -->
+        <div class="position-relative">
+        <div class="shape shape-bottom shape-fluid-x svg-shim text-light">
+            <svg viewBox="0 0 1738 487" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1420.92s713.43 457.505 0 485.868C707.502 514.231 0 0 0 0z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="0" y1="0" x2="1049.98" y2="912.68" gradientUnits="userSpaceOnUse"><stop stop-color="currentColor" stop-opacity=".075"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs></svg>      </div>
+        </div>
+        <!-- Content -->
+        <section class="py-8 py-md-11-n10 mt-md-n14">
+        <div class="container">
+            <div class="row " id="portfolio" data-isotope='{"layoutMode":"fitRows"}'>
+                {% for categorie in categories %}
+                    {# on va utilisé la derniere img pr presenter ls peintures en utilisnt le filstre last #}
+                    {% set img = categorie.peintures|last %}
+                <div class="col-12 col-md-4 ux">
+                    <a href="{{ path('portfolio-categorie',{'slug':categorie.slug}) }}" class="card lift lift-lg shadow-light-lg mb-7">
+                        <img src="{{ img.file }}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <div class="shape shape-bottom shape-fluid-x svg-shim text-white">
+                                <svg viewBox="0 0 1738 487" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1420.92s713.43 457.505 0 485.868C707.502 514.231 0 0 0 0z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="0" y1="0" x2="1049.98" y2="912.68" gradientUnits="userSpaceOnUse"><stop stop-color="currentColor" stop-opacity=".075"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs></svg>
+                            </div>
+                        <h4 class="mb-0"> {{ categorie.nom }}</h4>
+                        <small>{{ categorie.description|nl2br }}</small>
+                        </div>
+                    </a>
+                </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </section>
+{% endblock %}

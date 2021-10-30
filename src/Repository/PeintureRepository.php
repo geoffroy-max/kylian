@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Categorie;
 use App\Entity\Peinture;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -35,7 +36,23 @@ class PeintureRepository extends ServiceEntityRepository
               ->orderBy('p.id', 'ASC')
             ->setMaxResults(8)
                 ->getQuery();
+    }
 
+    /**
+     * cette fonction permet de recuperer les peintures avec ttes categories
+     *  :on a ue reltion entre peinture et une categorie
+     * comme la peinture peut avoir plus+ categorie on lui dit qu'il faut qu'il soit menbre de la categorie
+     * qu'on va passé en paramtre(categorie dans ntre cas) cad qu'il soit menbre de tel grp
+     * recuperer les peintures qui sont menbrs du grp cad d la categorie  qui est passé en parmtre
+     * et on  recuperer les peintures qui ont uniquement le portfolio true
+     */
+    public function findAllPortfolio( $categorie){
+       return $this->createQueryBuilder('p')
+           ->where( ':categorie MEMBER OF p.categorie')
+           ->andWhere('p.potfolio = TRUE')
+           ->setParameter('categorie',$categorie)
+            ->getQuery()
+           ->getResult();
     }
 
 
