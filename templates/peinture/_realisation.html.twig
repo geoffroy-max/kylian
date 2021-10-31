@@ -2,17 +2,17 @@
 
 <div class="card mb-6 shadow-light-lg lift lift-lg">
 
-    <a href="" class="card-img-top">
+    <a href="{{ path('detail-realisation',{'slug': peinture.slug}) }}" class="card-img-top">
         <img src="{{ asset(peinture.file) }}" alt="" class="card-img-top">
     </a>
-        <a href="" class="card-body">
+        <a href="{{ path('detail-realisation',{'slug': peinture.slug}) }}" class="card-body">
 
             <h3>{{ peinture.nom }}</h3>
             <p class="mb-0 text-muted">
                 {{ peinture.description|u.truncate(200 ,'...' , false) }}
             </p>
     </a>
-    <a href="" class="card-meta mt-auto">
+    <a href="{{ path('detail-realisation',{'slug': peinture.slug}) }}" class="card-meta mt-auto">
         <hr class="card-meta-divider">
         <p class="h6 text-uppercase text-muted mb-0 ms-auto">
             <time> Ajoutée le {{ peinture.createdAt|date('d/m/y') }}</time>
