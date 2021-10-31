@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\BlogPost;
 use App\Repository\BlogPostRepository;
 use App\Repository\PeintureRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -24,6 +25,17 @@ class BlogPostController extends AbstractController
 
         return $this->render('blog_post/actualité.html.twig', [
             'blogposts'=>$blogposts
+        ]);
+    }
+
+    /**
+     * cette fonction permet de connaitre les deatils d'une actualité
+     * @Route("/actualité/{slug}", name="actualité_detail")
+     */
+    public function DetailA(BlogPost $blogPost){
+
+        return $this->render('blog_post/detail.html.twig',[
+            'blogpost'=>$blogPost
         ]);
     }
 }
