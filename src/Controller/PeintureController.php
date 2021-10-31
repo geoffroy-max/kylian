@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Peinture;
 use App\Repository\PeintureRepository;
 
 
@@ -26,4 +27,13 @@ $peintures= $paginator->paginate($Dpeintures, $request->query->getInt('page',1),
         ]);
     }
 
+    /**
+     * une fonction qui permet de connaitre le detail sur realisation de la peinture
+     * @Route("realisation/{slug}", name="detail-realisation")
+     */
+    public function detailActualite(Peinture $peinture){
+        return $this->render('peinture/detail.html.twig',[
+            'peinture'=>$peinture
+        ]);
+    }
 }
