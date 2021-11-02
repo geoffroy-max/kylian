@@ -24,3 +24,7 @@ kylian est un site internet présentant des peintures
 
 # lancer les test
 * php bin/phpunit --testdox
+### en production
+les mails de prise de contact sont stockés en BD. pr les envoyer au peintre par mail ,il faut mettre en place un cron sur
+...bash
+symfony console app:send-contact
