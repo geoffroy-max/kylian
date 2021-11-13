@@ -12,7 +12,7 @@ class HomeController extends AbstractController
 {
     /**
      * cette fonction permet d'afficher la page d'accueil
-     * @Route("/", name="home")
+     * @Route("/home", name="home")
      */
     public function index(PeintureRepository $peintureRepository,BlogPostRepository $bRpo): Response
     {
@@ -20,5 +20,6 @@ class HomeController extends AbstractController
             'peintures'=>$peintureRepository->LastTree(),
             'blogposts'=>$bRpo->LasTree()
         ]);
+
     }
 }

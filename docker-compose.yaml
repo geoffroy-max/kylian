@@ -4,7 +4,7 @@ services:
         image: 'mysql:latest'
         environment:
             MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: main
+            MYSQL_DATABASE: db
         ports:
             # To allow the host machine to access the ports below, modify the lines below.
             # For example, to allow the host to connect to port 3306 on the container, you would change
@@ -12,5 +12,5 @@ services:
             # See https://docs.docker.com/compose/compose-file/#ports for more information.
             - '3306'
     mailer:
-        image: schickling/mailcatcher
-        ports: [1025 , 1080]
+       image: schickling/mailcatcher
+       ports: [1025 , 1080]
