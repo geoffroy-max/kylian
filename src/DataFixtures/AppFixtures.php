@@ -81,7 +81,7 @@ $password = $this->hasher->hashPassword($user, 'password');
                              ->setDescription($faker->text())
                               ->setPotfolio($faker->randomFloat([true,false]))
                               ->setSlug($faker->slug())
-                              ->setFile('/img/place.jpg')
+                              ->setFile('place.jpg')
                                ->addCategorie($categorie)
                                 ->setPrix($faker->randomFloat(2,100,9999))
                                 ->setUser($user);
