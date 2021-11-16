@@ -21,6 +21,7 @@ class BlogPostRepository extends ServiceEntityRepository
 
     public function LasTree(){
         return $this->FindAllVisible('b')
+            ->orderBy('b.id','DESC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult();

@@ -6,9 +6,12 @@ use App\Repository\PeintureRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PeintureRepository::class)
+ * @Vich\Uploadable
  */
 class Peinture
 {
@@ -74,6 +77,34 @@ class Peinture
      */
     private $file;
 
+    /**
+     * REMARQUE : il ne s'agit pas d'un champ mappé de métadonnées d'entité, mais d'une simple propriété.
+     *
+     * @Vich\UploadableField(mapping="peinture_images", fileNameProperty="file")
+     *
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param File|null $imageFile
+     * @return Peinture
+     */
+    public function setImageFile(File $file = null)
+    {
+        $this->imageFile = $file;
+        if ($file) {
+            $this->createdAt = new \DateTime('now');
+        }
+    }
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="peintures")
      * @ORM\JoinColumn(nullable=false)
@@ -298,4 +329,7 @@ class Peinture
 
         return $this;
     }
+
+
+
 }

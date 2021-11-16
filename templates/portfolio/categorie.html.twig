@@ -33,9 +33,9 @@
                 {% for peinture in peintures %}
                     {# on va utilisé la derniere img pr presenter ls peintures en utilisnt le filstre last #}
                     <div class="col-12 col-md-4 ">
-                        <a href="" class="card lift lift-lg shadow-light-lg mb-7" data-bigpicture='{"imgSrc":"{{ peinture.file }}"}'>
+                        <a href="" class="card lift lift-lg shadow-light-lg mb-7" data-bigpicture='{"imgSrc":"{{ vich_uploader_asset(peinture ,'imageFile')}}"}'>
                             <div class="card-zoom">
-                                <img src="{{ peinture.file }}" alt="" class="card-img">
+                                <img src="{{ vich_uploader_asset(peinture ,'imageFile')}}" alt="" class="card-img">
                             </div>
                         </a>
                     </div>

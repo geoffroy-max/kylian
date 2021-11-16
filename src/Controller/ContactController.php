@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController
 {
     /**
+     * cette fonction focntion permet d'envoyer un msg au user(peintre)
      * @Route("/contact", name="contact")
      */
     public function index(Request $request,ServiceContact $serviceContact): Response
