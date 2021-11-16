@@ -48,6 +48,12 @@ class PeintureCrudController extends AbstractCrudController
 
         ];
     }
+
+    /**
+     * cette fonction permet de configurer le crud du peinture
+     * @param Crud $crud
+     * @return Crud
+     */
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
