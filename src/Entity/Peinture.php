@@ -104,6 +104,7 @@ class Peinture
         if ($file) {
             $this->createdAt = new \DateTime('now');
         }
+        return $this;
     }
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="peintures")

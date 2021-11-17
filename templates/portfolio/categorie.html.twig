@@ -6,7 +6,7 @@
 
     <!-- WELCOME -->
 {% set img = categorie.peintures|last %}
-<section data-jarallax data-speed=".8" class="py-10 py-md-14 overlay overlay-black overlay-60 bg-cover jarallax" style="background-image: url({{ img.file }});">
+<section data-jarallax data-speed=".8" class="py-10 py-md-14 overlay overlay-black overlay-60 bg-cover jarallax" style="background-image: url({{ vich_uploader_asset(img ,'imageFile') | imagine_filter('welcome')}});">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-7 text-center">
@@ -33,9 +33,9 @@
                 {% for peinture in peintures %}
                     {# on va utilisé la derniere img pr presenter ls peintures en utilisnt le filstre last #}
                     <div class="col-12 col-md-4 ">
-                        <a href="" class="card lift lift-lg shadow-light-lg mb-7" data-bigpicture='{"imgSrc":"{{ vich_uploader_asset(peinture ,'imageFile')}}"}'>
+                        <a href="" class="card lift lift-lg shadow-light-lg mb-7" data-bigpicture='{"imgSrc":"{{ vich_uploader_asset(peinture ,'imageFile')| imagine_filter('full')}}"}'>
                             <div class="card-zoom">
-                                <img src="{{ vich_uploader_asset(peinture ,'imageFile')}}" alt="" class="card-img">
+                                <img src="{{ vich_uploader_asset(peinture ,'imageFile')| imagine_filter('portfolio')}}" alt="" class="card-img">
                             </div>
                         </a>
                     </div>
