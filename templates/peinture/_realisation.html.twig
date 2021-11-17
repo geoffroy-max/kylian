@@ -3,7 +3,7 @@
 <div class="card mb-6 shadow-light-lg lift lift-lg">
 
     <a href="{{ path('detail-realisation',{'slug': peinture.slug}) }}" class="card-img-top">
-        <img src="{{ vich_uploader_asset(peinture ,'imageFile')}}" alt="" class="card-img-top">
+        <img src="{{ vich_uploader_asset(peinture ,'imageFile') | imagine_filter('miniature')}}" alt="" class="card-img-top">
     </a>
         <a href="{{ path('detail-realisation',{'slug': peinture.slug}) }}" class="card-body">
 

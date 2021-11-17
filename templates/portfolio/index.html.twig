@@ -31,7 +31,7 @@
                     {% set peinture = categorie.peintures|last %}
                 <div class="col-12 col-md-4 ux">
                     <a href="{{ path('portfolio-categorie',{'slug':categorie.slug}) }}" class="card lift lift-lg shadow-light-lg mb-7">
-                        <img src="{{ vich_uploader_asset(peinture ,'imageFile')}}" alt="" class="card-img-top">
+                        <img src="{{ vich_uploader_asset(peinture ,'imageFile')|imagine_filter('portfolio')}}" alt="" class="card-img-top">
                         <div class="card-body">
                             <div class="shape shape-bottom shape-fluid-x svg-shim text-white">
                                 <svg viewBox="0 0 1738 487" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1420.92s713.43 457.505 0 485.868C707.502 514.231 0 0 0 0z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="0" y1="0" x2="1049.98" y2="912.68" gradientUnits="userSpaceOnUse"><stop stop-color="currentColor" stop-opacity=".075"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs></svg>
