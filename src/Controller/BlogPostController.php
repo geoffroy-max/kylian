@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\CommentaireService\CommentaireService;
 use App\Entity\BlogPost;
+use App\Entity\Commentaire;
+use App\Form\CommentaireType;
 use App\Repository\BlogPostRepository;
+use App\Repository\CommentaireRepository;
 use App\Repository\PeintureRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,10 +36,22 @@ class BlogPostController extends AbstractController
      * cette fonction permet de connaitre les deatils d'une actualité
      * @Route("/actualité/{slug}", name="actualité_detail")
      */
-    public function DetailA(BlogPost $blogPost){
+    public function DetailA(BlogPost $blogPost,Request $request,CommentaireService $commentaireService, CommentaireRepository $commentaireRepository){
+          $commentaires= $commentaireRepository->findCommentaires($blogPost);
+        $commentaire= new Commentaire();
+        $form= $this->createForm(CommentaireType::class, $commentaire);
+        $form->handleRequest($request);
+        if($form->isSubmitted()&& $form->isValid()){
+            $form= $form->getdata();
+            $commentaireService->PersistCommentaire($commentaire,$blogPost,null);
+            $this->addFlash('success','votre commentaires à été envoyé , merci il sera publié apres validation');
+            return $this->redirectToRoute('actualité_detail',['slug'=> $blogPost->getSlug()]);
 
+        }
         return $this->render('blog_post/detail.html.twig',[
-            'blogpost'=>$blogPost
+            'blogpost'=>$blogPost,
+            'form'=>$form->createView(),
+            'commentaires' => $commentaires,
         ]);
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Peinture;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -60,6 +62,12 @@ class PeintureCrudController extends AbstractCrudController
             ->setDefaultSort(['createdAt'=>'DESC']);
 
 
+    }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->add(Crud::PAGE_INDEX, 'detail')
+            ->disable(action::DELETE, action::NEW);
     }
 
 }
