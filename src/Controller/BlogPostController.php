@@ -33,7 +33,7 @@ class BlogPostController extends AbstractController
     }
 
     /**
-     * cette fonction permet de connaitre les deatils d'une actualité
+     * cette fonction permet de connaitre les details d'une actualité
      * @Route("/actualité/{slug}", name="actualité_detail")
      */
     public function DetailA(BlogPost $blogPost,Request $request,CommentaireService $commentaireService, CommentaireRepository $commentaireRepository){

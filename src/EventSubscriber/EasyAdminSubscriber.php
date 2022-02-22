@@ -23,8 +23,8 @@ class EasyAdminSubscriber implements EventSubscriberInterface
     /**
      * cette fonction permet d'abonnée aux event
      * (abonné à tous events des entités )
-     * cad écouté des events, tu d'abonne au BeforeEntityPersistedEvent
-     * ( cad tu vas allé ecouter les Events avant l entité soit persité)et tu vas lui envoyé ue fnction
+     * cad écouté des events, tu t'abonnes au BeforeEntityPersistedEvent
+     * ( cad tu vas allé ecouter les Events avant que l entité soit persité)et tu vas lui envoyé ue fnction
      * pr definir le user,date (concernant le slug on a un champ slugfied qui genere auto le slug)
      *
      * @return \string[][]
