@@ -50,6 +50,10 @@ class SendEmailCommand extends Command
      * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
+
+  // findby  elle permet de retourner une liste d'entités,
+        // sauf qu'elle est capable d'effectuer un filtre
+        // pour ne retourner que les entités correspondant à un critère.
     { $tosend = $this->contactRepository->findBy(['isSend'=>false]);
         $adress = new Address($this->userRepository->getPeintre()->getEmail(),$this->userRepository->getPeintre()->getNom().''. $this->userRepository->getPeintre()->getPrenom());
  foreach ($tosend as $mail)

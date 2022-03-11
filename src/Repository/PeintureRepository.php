@@ -40,7 +40,7 @@ class PeintureRepository extends ServiceEntityRepository
 
     /**
      * cette fonction permet de recuperer les peintures avec ttes categories
-     *  :on a ue reltion entre peinture et une categorie
+     *  :on a ue relation entre peinture et une categorie
      * comme la peinture peut avoir plus+ categorie on lui dit qu'il faut qu'il soit menbre de la categorie
      * qu'on va passé en paramtre(categorie dans ntre cas) cad qu'il soit menbre de tel grp
      * recuperer les peintures qui sont menbrs du grp cad d la categorie  qui est passé en parmtre
