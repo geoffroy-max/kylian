@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
-  <component name="ChangeListManager">
-    <list default="true" id="edebf797-c473-4d8e-adf2-88a4d3fcc96d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/kylian.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kylian.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AProposController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AProposController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServiceContact/ServiceContact.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServiceContact/ServiceContact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/blogpost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/blogpost.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/realisation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/realisation.html.twig" afterDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
@@ -174,54 +149,10 @@
       <path value="$PROJECT_DIR$/vendor/imagine/imagine" />
     </include_path>
   </component>
-  <component name="ProjectId" id="26Hjw56j3now8pdq1kxS3cF34WI" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RunManager">
-    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="edebf797-c473-4d8e-adf2-88a4d3fcc96d" name="Changes" comment="" />
-      <created>1647087643732</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1647087643732</updated>
-      <workItem from="1647087645919" duration="2639000" />
-      <workItem from="1647201800957" duration="1541000" />
-      <workItem from="1647477954755" duration="607000" />
-      <workItem from="1647622373490" duration="640000" />
-      <workItem from="1647788098365" duration="540000" />
-      <workItem from="1647891669264" duration="1569000" />
-      <workItem from="1647898628058" duration="740000" />
-      <workItem from="1647931446802" duration="3075000" />
-      <workItem from="1648206611922" duration="4178000" />
-      <workItem from="1648673621168" duration="14674000" />
-      <workItem from="1649432351689" duration="19373000" />
-      <workItem from="1649783195100" duration="6420000" />
-      <workItem from="1649892120272" duration="5088000" />
-      <workItem from="1650581994101" duration="707000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
 </project>

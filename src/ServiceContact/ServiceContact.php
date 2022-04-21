@@ -1,8 +1,11 @@
 <?php
 namespace App\ServiceContact;
 
+use App\Entity\Commentaire;
 use App\Entity\Contact;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 
 class ServiceContact {
 
@@ -36,6 +39,10 @@ class ServiceContact {
      $this->manager->flush();
 
  }
+
+
+
+
 
 }
 

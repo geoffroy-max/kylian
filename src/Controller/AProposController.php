@@ -16,7 +16,9 @@ class AProposController extends AbstractController
     public function index(UserRepository $useRpo): Response
     {
         return $this->render('a_propos/index.html.twig', [
-        'peintre'=>$useRpo->getPeintre()
+            'peintre' => $useRpo->getPeintre()
         ]);
     }
 }
+
+
